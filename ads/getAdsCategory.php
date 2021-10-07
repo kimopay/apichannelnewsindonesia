@@ -1,8 +1,9 @@
 <?php
- require_once 'connection.php';
+ require_once '../connection.php';
  header('Content-type: application/json');
 
-$query = "SELECT * FROM configs ORDER BY id DESC";
+$category = $_GET["category"];
+$query = "SELECT * FROM ads WHERE category = '$category' ORDER BY id DESC";
 
  $result = mysqli_query($conn, $query);
 
@@ -12,6 +13,6 @@ $query = "SELECT * FROM configs ORDER BY id DESC";
  }
 
  echo ($result) ?
- json_encode(array("kode" => "1", "configs_result" => $array)) :
+ json_encode(array("kode" => "1", "ads_category" => $array)) :
  json_encode(array("kode" => "0", "pesan" => "Data tidak ditemukan"));
 ?>
