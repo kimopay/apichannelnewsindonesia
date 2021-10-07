@@ -1,8 +1,6 @@
 <?php
-//connection class
-// try brace main
-// from office pc 
-$nilai = "a";
-echo $nilai;
+date_default_timezone_set("Asia/Makassar");
+session_start();
+$conn = mysqli_connect("localhost", "root", "", "u5461363_channelnews");
 
 ?>
