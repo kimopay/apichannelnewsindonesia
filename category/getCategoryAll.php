@@ -2,7 +2,7 @@
  require_once '../connection.php';
  header('Content-type: application/json');
 
-$query = "SELECT * FROM category ORDER BY id DESC";
+$query = "SELECT * FROM category";
 
  $result = mysqli_query($conn, $query);
 
