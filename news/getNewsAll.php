@@ -2,7 +2,11 @@
  require_once '../connection.php';
  header('Content-type: application/json');
 
-$query = "SELECT * FROM news ORDER BY id DESC";
+ 
+$record_awal = $_GET["record_awal"];
+$jumlah_record = $_GET["jumlah_record"];
+
+$query = "SELECT * FROM news ORDER BY id DESC LIMIT $record_awal , $jumlah_record ";
 
  $result = mysqli_query($conn, $query);
 
