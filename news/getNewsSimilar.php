@@ -3,7 +3,8 @@
  header('Content-type: application/json');
 
  $id = $_GET["id"];
-$query = "SELECT * FROM news WHERE id NOT IN ('$id') ORDER BY id DESC";
+ $category_id = $_GET["category_id"];
+$query = "SELECT * FROM news WHERE category_id = '$category_id' AND id NOT IN ('$id') ORDER BY id DESC";
 
  $result = mysqli_query($conn, $query);
 
